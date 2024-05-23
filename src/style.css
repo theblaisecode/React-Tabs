@@ -125,9 +125,6 @@ i {
 
 .activeTab {
   display: flex;
-}
-
-.activeTab {
   background: var(--primary);
   color: var(--textLight);
   transition: all 0.4s ease-in-out;
@@ -147,7 +144,7 @@ i {
 .marker #bottom,
 .marker #top {
   background: var(--secondary);
-  box-shadow: 32px 32px 48px var(--shadow);
+  box-shadow: 1px 3px 48px 2px rgba(0, 0, 0, 0.562);
 }
 
 .marker #top {
@@ -161,7 +158,56 @@ i {
   border-radius: 0 32px 0 0;
 }
 
-.activeBtn ~ .marker {
-  transform: translateY(calc(calc(50% / 3) * 0));
+.load{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
 }
 
+/* HTML: <div class="loader"></div> */
+.loading {
+  width: 65px;
+  aspect-ratio: 1;
+  position: relative;
+}
+.loading:before,
+.loading:after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px inset #fff;
+  animation: l4 2.5s infinite;
+}
+.loading:after {
+  animation-delay: -1.25s;
+}
+@keyframes l4 {
+  0% {
+    inset: 0 35px 35px 0;
+  }
+  12.5% {
+    inset: 0 35px 0 0;
+  }
+  25% {
+    inset: 35px 35px 0 0;
+  }
+  37.5% {
+    inset: 35px 0 0 0;
+  }
+  50% {
+    inset: 35px 0 0 35px;
+  }
+  62.5% {
+    inset: 0 0 0 35px;
+  }
+  75% {
+    inset: 0 0 35px 35px;
+  }
+  87.5% {
+    inset: 0 0 35px 0;
+  }
+  100% {
+    inset: 0 35px 35px 0;
+  }
+}

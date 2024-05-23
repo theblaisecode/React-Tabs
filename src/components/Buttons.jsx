@@ -1,5 +1,3 @@
-// import React from "react";
-
 export default function Button({ isTabs, changeTab, toggleTabs }) {
   const getMarkerPosition = (index) => {
     const reversedIndex = isTabs.length - index - 1;
@@ -8,7 +6,7 @@ export default function Button({ isTabs, changeTab, toggleTabs }) {
 
   return (
     <div className="buttons">
-      {isTabs.map((item, index) => (
+      {isTabs.map((item) => (
         <button
           className={toggleTabs === item.order ? "btn activeBtn" : "btn"}
           key={item.id}
