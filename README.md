@@ -1,7 +1,7 @@
 # React Tabs
 Simple responsive react tabs project using ReactJS & Vite
 
-Live Website - https://theblaisecode.github.io/React-Tabs
+Live Website - https://theblaisecode.github.io/React-Tabs/
 <br/>
 
 ## 🔶 Result
