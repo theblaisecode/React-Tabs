@@ -302,9 +302,9 @@ i {
   }
 
   .marker #bottom {
-    width: calc(100%);
+    width: calc(150%);
     height: 100%;
-    margin-right: -2.1rem;
+    margin-right: -13rem;
     border-radius: 0 0 0 32px;
   }
 }
