@@ -28,7 +28,7 @@ body {
 
 .show {
   width: 48vw;
-  height: 33rem;
+  height: 35rem;
   border-radius: 48px;
   box-sizing: border-box;
   border: 16px solid var(--secondary);
@@ -144,7 +144,7 @@ i {
 .marker #bottom,
 .marker #top {
   background: var(--secondary);
-  box-shadow: 1px 3px 48px 2px rgba(0, 0, 0, 0.562);
+  box-shadow: -5px 3px 48px 8px rgba(0, 0, 0, 0.562);
 }
 
 .marker #top {
@@ -158,19 +158,20 @@ i {
   border-radius: 0 32px 0 0;
 }
 
-.load{
+.load,
+.err {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50vh;
 }
 
-/* HTML: <div class="loader"></div> */
 .loading {
   width: 65px;
   aspect-ratio: 1;
   position: relative;
 }
+
 .loading:before,
 .loading:after {
   content: "";
@@ -179,9 +180,11 @@ i {
   box-shadow: 0 0 0 3px inset #fff;
   animation: l4 2.5s infinite;
 }
+
 .loading:after {
   animation-delay: -1.25s;
 }
+
 @keyframes l4 {
   0% {
     inset: 0 35px 35px 0;
@@ -209,5 +212,151 @@ i {
   }
   100% {
     inset: 0 35px 35px 0;
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  color: var(--textLight);
+}
+
+.error h1 {
+  width: fit-content;
+  font-weight: 700;
+  font-family: monospace;
+  text-shadow: 0 0 0 var(--textLight), 0 0 0 var(--shadow), 0 0 0 var(--primary);
+  font-size: 4rem;
+  animation: error 1s infinite cubic-bezier(0.5, -2000, 0.5, 2000);
+}
+
+@keyframes error {
+  25%,
+  100% {
+    text-shadow: 0.03px -0.01px 0.01px var(--textLight),
+      0.02px 0.02px 0 var(--shadow), -0.02px 0.02px 0 var(--primary);
+  }
+}
+
+.error span {
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+  animation: cursor 0.5s alternate infinite;
+}
+
+@keyframes cursor {
+  from {
+    box-shadow: inset -3px 0px 0px var(--textLight);
+  }
+  to {
+    box-shadow: inset -3px 0px 0px transparent;
+  }
+}
+
+@media screen and (max-width: 599px), screen and (max-height: 599px) {
+  .show {
+    width: 98vw;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .btn {
+    padding: 2rem 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+  }
+
+  .singleTab {
+    padding: 1.5rem;
+  }
+
+  .marker {
+    flex-direction: row;
+    width: 300%;
+    height: 100%;
+    top: 0;
+    right: calc(-100%);
+    left: calc(-100%);
+    margin-left: -1.3rem;
+  }
+
+  .marker #top,
+  .marker #bottom {
+    rotate: -360deg;
+    width: 50%;
+    height: 100%;
+  }
+
+  .marker #top {
+    width: calc(75%);
+    height: 100%;
+    margin-right: 7rem;
+    margin-bottom: 0;
+    border-radius: 0 0 32px 0;
+  }
+
+  .marker #bottom {
+    width: calc(100%);
+    height: 100%;
+    margin-left: 0;
+
+    border-radius: 0 0 0 32px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .show {
+    width: 90vw;
+    height: 33rem;
+    border-radius: 40px;
+    border: 14px solid var(--secondary);
+  }
+
+  .buttons {
+    width: 80%;
+    max-width: 200px;
+  }
+
+  .btn {
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .singleTab {
+    padding: 1rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .company {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+  }
+
+  .date {
+    font-size: 1rem;
+  }
+
+  .contentBottom {
+    gap: 0.8rem;
+  }
+
+  .duty {
+    gap: 0.8rem;
+  }
+
+  i {
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 }

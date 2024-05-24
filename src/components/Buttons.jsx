@@ -1,7 +1,15 @@
 export default function Button({ isTabs, changeTab, toggleTabs }) {
   const getMarkerPosition = (index) => {
+    const isSmallScreen = window.matchMedia(
+      "(max-width: 599px), (max-height: 599px)"
+    ).matches;
     const reversedIndex = isTabs.length - index - 1;
-    return `translateY(${reversedIndex * 8.5}%)`;
+
+    if (isSmallScreen) {
+      return `translateX(${reversedIndex * 18}%)`;
+    } else {
+      return `translateY(${reversedIndex * 8.3}%)`;
+    }
   };
 
   return (
